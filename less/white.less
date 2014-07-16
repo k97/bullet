@@ -1,34 +1,43 @@
 
 // White BG
 // --------------------------------------------------
-
 body.white{
+    background:@whiteBG;
 
-    ::-moz-selection {
-        background: #b3d4fc;
-        text-shadow: none;
+    /* Scrollbar Customisation */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height:8px;
     }
 
-    ::selection {
-        background: #b3d4fc;
-        text-shadow: none;
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius:5px;
+        background: transparent;
     }
 
+    /* Scrollbar Handle */
+    ::-webkit-scrollbar-thumb {
+        border-radius:5px;
+        background: darken(@whiteBG,10%);
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: darken(@whiteBG,15%);
+    }
 
-    background:#eee;
-        #dropdown{
-            a{
-                color:#aaa;
-                background: lighten(#57388D, 10%);
-                border-right: 1px solid darken(#57388D, 10%);
-                border-left: 1px solid lighten(#57388D, 10%);
+    #dropdown{
+        a{
+            color:#aaa;
+            background: lighten(@brandOne, 10%);
+            border-right: 1px solid darken(@brandOne, 10%);
+            border-left: 1px solid lighten(@brandOne, 10%);
 
-            }
-            a:hover{
-                color:#ccc;
-                background: #57388D;
-            }
         }
+        a:hover{
+            color:#ccc;
+            background: @brandOne;
+        }
+    }
 
     header{
         border-bottom: 1px solid #aaa;
@@ -37,19 +46,19 @@ body.white{
         }
     }
     #heading{
-        color:#1f1f1f;
+        color:@whiteTxt;
     }
     nav{
         i{
-            color:#1f1f1f;
+            color:@whiteTxt;
         }
     }
     #content{
-        color:#1f1f1f;
+        color:@whiteTxt;
 
     }
     a{
-        color:#00A1E2;
-        border-bottom: 1px solid #00A1E2;
+        color:darken(@selectBG, 70%);
+        border-bottom: 1px solid darken(@selectBG, 70%);
     }
 }

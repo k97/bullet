@@ -431,7 +431,7 @@ th {
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */
 }
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dppx) {
   /* Style adjustments for high resolution devices */
 }
 /* ==========================================================================
@@ -490,26 +490,6 @@ th {
   h3 {
     page-break-after: avoid;
   }
-}
-/* scrollbar customisation */
-::-webkit-scrollbar {
-  width: 12px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0, 0, 0, 0.1);
 }
 /* ==========================================================================
    Base styles: opinionated defaults
@@ -598,7 +578,18 @@ textarea {
 .serif main h6,
 .serif main p,
 .serif main div,
-.serif main em {
+.serif main em,
+.serif main article,
+.serif main aside,
+.serif main details,
+.serif main figcaption,
+.serif main figure,
+.serif main footer,
+.serif main header,
+.serif main hgroup,
+.serif main main,
+.serif main nav,
+.serif main section {
   font-size: 16px;
   line-height: 34px;
 }
@@ -616,8 +607,19 @@ textarea {
 .sans main h6,
 .sans main p,
 .sans main div,
-.sans main em {
-  font-size: 19px;
+.sans main em,
+.sans main article,
+.sans main aside,
+.sans main details,
+.sans main figcaption,
+.sans main figure,
+.sans main footer,
+.sans main header,
+.sans main hgroup,
+.sans main main,
+.sans main nav,
+.sans main section {
+  font-size: 18px;
   line-height: 32px;
 }
 @font-face {
@@ -1086,20 +1088,34 @@ textarea {
 }
 body.black {
   background: #141414;
+  /* Scrollbar Customisation */
+  /* Track */
+  /* Scrollbar Handle */
 }
 body.black ::-moz-selection {
-  background: #b3d4fc;
   color: #fff;
-  text-shadow: none;
 }
 body.black ::selection {
-  background: #b3d4fc;
   color: #fff;
-  text-shadow: none;
+}
+body.black ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body.black ::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: transparent;
+}
+body.black ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #0c0c0c;
+}
+body.black ::-webkit-scrollbar-thumb:window-inactive {
+  background: #2e2e2e;
 }
 body.black #dropdown a {
   color: #aaa;
-  background: #57388D;
+  background: #57388d;
   border-right: 1px solid #402a68;
   border-left: 1px solid #6e46b2;
 }
@@ -1119,22 +1135,32 @@ body.black nav i {
   color: #9f9f9f;
 }
 body.black #content {
-  color: #8f8f8f;
+  color: #a0a0a0;
 }
 body.black a {
-  color: #aaa;
-  border-bottom: 1px solid #aaa;
+  color: #ececec;
+  border-bottom: 1px solid #ececec;
 }
 body.white {
-  background: #eee;
+  background: #eeeeee;
+  /* Scrollbar Customisation */
+  /* Track */
+  /* Scrollbar Handle */
 }
-body.white ::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+body.white ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-body.white ::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+body.white ::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background: transparent;
+}
+body.white ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #d5d5d5;
+}
+body.white ::-webkit-scrollbar-thumb:window-inactive {
+  background: #c8c8c8;
 }
 body.white #dropdown a {
   color: #aaa;
@@ -1144,7 +1170,7 @@ body.white #dropdown a {
 }
 body.white #dropdown a:hover {
   color: #ccc;
-  background: #57388D;
+  background: #57388d;
 }
 body.white header {
   border-bottom: 1px solid #aaa;
@@ -1162,8 +1188,8 @@ body.white #content {
   color: #1f1f1f;
 }
 body.white a {
-  color: #00A1E2;
-  border-bottom: 1px solid #00A1E2;
+  color: #032247;
+  border-bottom: 1px solid #032247;
 }
 /* ==========================================================================
    Author's custom styles
@@ -1176,6 +1202,14 @@ body {
   height: 100%;
   font-family: 'Source Sans Pro';
   overflow: hidden;
+}
+body ::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+body ::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 header {
   display: block;
@@ -1245,8 +1279,9 @@ nav ul li i:hover {
 main {
   width: 100%;
   height: 100%;
-  display: inline-block;
+  display: block;
   margin: 5px 3% 50px;
+  padding: 0 0 36px 0;
   font-weight: normal;
 }
 main #content {
@@ -1262,7 +1297,6 @@ main #content {
 }
 main #content a {
   text-decoration: none;
-  padding-bottom: 1px;
 }
 main #content em {
   font-style: normal;

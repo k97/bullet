@@ -21,6 +21,23 @@ html,body{
     font-family: 'Source Sans Pro';
     overflow: hidden;
 }
+
+body{
+
+
+    ::-moz-selection {
+        background: @selectBG;
+        text-shadow: none;
+    }
+
+    ::selection {
+        background: @selectBG;
+        text-shadow: none;
+    }
+
+
+
+}
 // HEADER
 // --------------------------------------------------
 
@@ -113,8 +130,9 @@ nav{
 
 main{
     .setWidthHt(100%,100%);
-    display: inline-block;
+    display: block;
     margin:5px 3% 50px;
+    padding:0 0 36px 0;
     font-weight: normal;
 
     #content{
@@ -129,7 +147,6 @@ main{
 
         a{
             text-decoration: none;
-            padding-bottom: 1px;
         }
 
         em{
@@ -176,8 +193,6 @@ main{
             a:hover{
                 background: #4d4d4d;
             }
-
-
 
         }//li
     }//ul

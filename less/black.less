@@ -5,55 +5,71 @@
 
 
 body.black{
+    background:@blackBG;
 
     ::-moz-selection {
-        background: #b3d4fc;
         color:#fff;
-        text-shadow: none;
     }
 
     ::selection {
-        background: #b3d4fc;
         color:#fff;
-        text-shadow: none;
+    }
+
+    /* Scrollbar Customisation */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height:8px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-radius:5px;
+        background: transparent;
+    }
+
+    /* Scrollbar Handle */
+    ::-webkit-scrollbar-thumb {
+        border-radius:5px;
+        background: darken(@blackBG,3%);
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: lighten(@blackBG,10%);
     }
 
 
-
-    background:#141414;
     #dropdown{
         a{
             color:#aaa;
-            background: #57388D;
-            border-right: 1px solid darken(#57388D, 10%);
-            border-left: 1px solid lighten(#57388D, 10%);
+            background: @brandOne;
+            border-right: 1px solid darken(@brandOne, 10%);
+            border-left: 1px solid lighten(@brandOne, 10%);
 
         }
         a:hover{
-            background: lighten(#57388D, 10%);
+            background: lighten(@brandOne, 10%);
         }
     }
 
     header{
-        border-bottom: 1px solid #0c0c0c;
+        border-bottom: 1px solid darken(@blackBG, 3%);
         #logo{
-            background: #0c0c0c;
+            background: darken(@blackBG, 3%);
         }
     }
     #heading{
-        color:#9f9f9f;
+        color:@blackTxt;
     }
     nav{
         i{
-            color:#9f9f9f;
+            color:@blackTxt;
         }
     }
     #content{
-        color:#8f8f8f;
+        color:lighten(@blackTxt, 0.5%);
     }
     a{
-        color:#aaa;
-        border-bottom: 1px solid #aaa;
+        color:lighten(@blackTxt, 30%);
+        border-bottom: 1px solid lighten(@blackTxt, 30%);
     }
 }
 

@@ -7,7 +7,7 @@ Simple sideproject for notes app
 ## PLAN
 
 1. Build the Backend
-2. Dropbox of Custom Clould API
+2. Dropbox or Custom Clould API
 3. Authentication Services (if needed)
 
 

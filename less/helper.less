@@ -88,7 +88,7 @@
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
        (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+       (min-resolution: 120dppx) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -161,27 +161,3 @@
 }
 
 
-
-
-/* scrollbar customisation */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.1);
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-::-webkit-scrollbar-thumb:window-inactive {
-  background: rgba(0,0,0,0.1);
-}
