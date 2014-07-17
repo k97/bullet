@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Bullet Text Reader</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -46,10 +46,10 @@
 
             <nav>
                 <ul>
-                    <li title="Format text" id="reset"><i class="iconreload"></i></li>
+                    <li title="Format text" id="reset"><i class="iconmonitor"></i></li>
                     <li title="Contrast" id="contrast"><i class="iconsun"></i></li>
-                    <li title="Text" id="text"><i class="iconsort-alphabetically"></i></li>
-                    <li title="Close" id="close"><i class="iconrecord"></i></li>
+                    <li title="Text" id="text"><i class="icontype"></i></li>
+                    <li title="Close" id="close"><i class="iconcross"></i></li>
                 </ul>
             </nav>
 
@@ -59,17 +59,9 @@
         <div class="clearfix"></div>
 
 
-
-
         <main>
             <div contentEditable="true" id="content"></div>
         </main>
-
-
-
-
-
-
 
 
 
@@ -78,47 +70,6 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script type="text/javascript">
-        $(function(){
-
-            $('#logo').click(function(){
-                $('#dropdown').slideToggle();
-            })
-
-            var Body = $('body');
-
-            $('#reset').click(function(){
-                $('body').find('*').removeAttr('style');
-            });
-
-            $('#contrast').click(function(){
-                Body.hasClass('black') ? Body.removeClass('black').addClass('white') : Body.removeClass('white').addClass('black');
-
-                var iconEle = $('#contrast').find('i');
-                iconEle.hasClass('iconsun') ? iconEle.removeClass( "iconsun").addClass("iconmoon") : iconEle.removeClass("iconmoon").addClass("iconsun");
-
-            });
-
-
-
-            $('#text').click(function(){
-                Body.hasClass('sans') ? Body.removeClass('sans').addClass('serif') : Body.removeClass('serif').addClass('sans');
-
-            })
-
-            $('#align').click(function(){
-                $('main').css('text-align', 'center');
-
-            })
-
-            $('#close').click(function(){
-                $('#content').html('');
-            })
-
-
-
-        });
-        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
